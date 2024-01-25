@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
+      {/* anything that is created here, will be displayed of every route page we create .*/}
     </html>
   );
 }
