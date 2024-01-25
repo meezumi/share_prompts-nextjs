@@ -3,6 +3,11 @@ import Image from "next/image";
 // this represents the home page route of the application, i.e localhost:3000/
 
 export default function Home() {
+  // it is being rendered as something called server-side component.
+  // if we want it to be client-side component, we add "use client" at the top of the page.
+
+  // whenever we are using react hooks, useState, useEffect or anything similar, we do that at client-side.
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
