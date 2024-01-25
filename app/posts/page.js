@@ -1,10 +1,10 @@
 import React from "react";
 
-// localhost:3000/user
+// localhost:3000/posts
 
 const page = () => {
   return (
-    <div> Hello User </div>
+    <div> POSTS </div>
   )
 }
 
