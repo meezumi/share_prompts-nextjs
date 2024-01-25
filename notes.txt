@@ -1,0 +1,35 @@
+Data Fetching:
+
+1. Server Side Rendering (SSR):
+dynamic Server rendered data, fetched fresh on every new refresh.
+for exp: 
+
+async function Page ({ params }) {
+  const res = await fetch(
+    `hwfoiwfowefwofwfwf/${paramId}`,
+    { cache: 'no-store'} // not storing in the cache
+  );
+  const data = await res.json();
+}
+
+2. Static Side Generation (SSG): 
+by default nextjs uses static site generation, it will automatically fetch and it and also cache it.
+
+async function Page ({ params }) {
+  const res = await fetch(
+    `hwfoiwfowefwofwfwf/${paramId}`,
+    
+  );
+  const data = await res.json();
+}
+
+3. Incremental Static Generation (ISR):
+it combines the benefits of SSR and SSG, for dynamic content in static site, i.e the data is going to be fetched and stored in cache, but will refresh in a timeframe mentioned.
+
+async function Page ({ params }) {
+  const res = await fetch(
+    `hwfoiwfowefwofwfwf/${paramId}`,
+    { next: { revalidate: 10} } 
+  );
+  const data = await res.json();
+}
