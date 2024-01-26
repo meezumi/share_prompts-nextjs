@@ -15,7 +15,8 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
 const Nav = () => {
   
-  const isUserLoggedIn = true;
+  // const isUserLoggedIn = true;
+  const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
   // initially providers is set to null
@@ -24,12 +25,12 @@ const Nav = () => {
 
   useEffect(() => {
     // the setProviders func, gets the update value from getProviders (from next-auth)
-    const setProviders = async () => {
+    const setUpProviders = async () => {
       const responce = await getProviders();
 
       setProviders(responce);
     }
-    setProviders(); // then the function is called
+    setUpProviders(); // then the function is called
   })
 
   return (
@@ -45,10 +46,13 @@ const Nav = () => {
         <p className="logo_text">Promptmon</p>
       </Link>
 
+      {/* {alert(session?.user)}  */}
+      {/* currently its undefined, cause we really dont have any user. */}
+
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
         {/* this means that if small device, its visible, else hidden */}
-        {isUserLoggedIn ? (
+        {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
               Create Post
@@ -60,7 +64,8 @@ const Nav = () => {
 
             <Link href="/profile">
               <Image
-                src="/assets/icons/profile.jpg"
+                src={session?.user.image}
+                // for this to work, will have to add 'lh3.googleusercontent.com' in next.config.js 
                 width={37}
                 height={37}
                 className="rounded-full"
@@ -78,7 +83,7 @@ const Nav = () => {
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="balck_btn"
+                  className="black_btn"
                 >
                   Sign In
                 </button>
@@ -89,10 +94,10 @@ const Nav = () => {
 
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
-        {isUserLoggedIn ? (
+        {session?.user ? (
           <div className="flex">
             <Image
-              src="/assets/icons/profile.jpg"
+              src={session?.user.image}
               width={37}
               height={37}
               className="rounded-full"
@@ -143,7 +148,7 @@ const Nav = () => {
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="balck_btn"
+                  className='black_btn'
                 >
                   Sign In
                 </button>
