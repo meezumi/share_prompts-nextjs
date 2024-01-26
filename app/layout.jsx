@@ -1,9 +1,13 @@
 // import React from 'react'
 import '@styles/globals.css';
-import { Children } from 'react';
+
+import Nav from '@components/Nav';
+import Provider from '@components/Provider';
+
+// layout is how the various components of the application all have the same layout, like navigation bar, footer etc., so we import them here.
 
 export const metadata = {
-  title: "promptmon",
+  title: "Promptmon",
   description: "a place to discover AI prompts" 
 }
 
@@ -19,6 +23,7 @@ const Rootlayout = ({ children }) => {
 
         <main className='app'>
         {/* actual main part of the application */}
+          <Nav />
           { children }
         </main>
       </body>
