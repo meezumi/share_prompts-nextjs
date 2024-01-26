@@ -15,6 +15,8 @@ const Rootlayout = ({ children }) => {
   return (
     <html>
       <body>
+        <Provider>
+
         <div className='main'>
         {/* inside the main body of the website */}
           <div className='gradient'/>
@@ -26,6 +28,9 @@ const Rootlayout = ({ children }) => {
           <Nav />
           { children }
         </main>
+
+        </Provider>
+
       </body>
     </html>
   );
