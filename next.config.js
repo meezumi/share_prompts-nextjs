@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // experimental: {
-  //   appDir: true,
-  //   serverComponentsExternalPackages: ["mongoose"],
-  // },
+  experimental: {
+    appDir: true,
+    serverComponentsExternalPackages: ["mongoose"],
+  },
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
@@ -12,8 +12,13 @@ const nextConfig = {
       ...config.experiments,
       topLevelAwait: true,
     };
+
+    config.resolve.fallback = {
+      "mongodb-client-encryption": false,
+      aws4: false,
+    };
     return config;
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

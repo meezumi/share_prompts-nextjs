@@ -27,7 +27,7 @@ const Feed = () => {
   const [searchedResults, setSearchedResults] = useState([]);
 
   const fetchPosts = async () => {
-    const response = await fetch("/api/prompt");
+    const response = await fetch("http://localhost:3000/api/prompt");
     const data = await response.json();
 
     setAllPosts(data);
@@ -80,7 +80,7 @@ const Feed = () => {
         />
       </form>
 
-      {/* All Prompts prompts matching the search field */}
+      {/* All Prompts prompts matching the */}
       {searchText ? (
         <PromptCardList
           data={searchedResults}
