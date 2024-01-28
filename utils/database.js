@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+require("dotenv").config({ path: ".env" });
+
 let isConnected = false;
 // for tracking the connection 
 
@@ -22,7 +24,7 @@ export const connectToDB = async () => {
     isConnected = true;
 
     console.log("MongoDB Connected")
-    
+
   } catch (error) {
     console.log(error);
   }
