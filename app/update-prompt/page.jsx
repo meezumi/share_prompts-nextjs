@@ -10,15 +10,10 @@ import Form from "@components/Form";
 
 const UpdatePrompt = () => {
   const router = useRouter();
-
-  if (!router.isFallback && !post) {
-    return <ErrorPage statusCode={404} />;
-  }
-
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
-  const [post, setPost] = useState({ prompt: "", tag: "" });
+  const [post, setPost] = useState({ prompt: "", tag: "", });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -62,7 +57,7 @@ const UpdatePrompt = () => {
 
   return (
     <Form
-      type="Edit"
+      type='Edit'
       post={post}
       setPost={setPost}
       submitting={submitting}

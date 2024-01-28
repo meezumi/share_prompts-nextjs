@@ -1,39 +1,34 @@
 // import React from 'react'
-import '@styles/globals.css';
+import "@styles/globals.css";
 
-import Nav from '@components/Nav';
-import Provider from '@components/Provider';
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 // layout is how the various components of the application all have the same layout, like navigation bar, footer etc., so we import them here.
 
 export const metadata = {
-  title: "Promptmon",
-  description: "a place to discover AI prompts" 
-}
+  title: "Promptopia",
+  description: "Discover & Share AI Prompts",
+};
 
-const Rootlayout = ({ children }) => {
-  return (
-    <html>
-      <body>
-        <Provider>
-
-        <div className='main'>
-        {/* inside the main body of the website */}
-          <div className='gradient'/>
+const RootLayout = ({ children }) => (
+  <html lang="en">
+    <body>
+      <Provider>
+        <div className="main">
+          {/* inside the main body of the website */}
+          <div className="gradient" />
           {/* this will give it the bg */}
         </div>
 
-        <main className='app'>
-        {/* actual main part of the application */}
+        <main className="app">
+          {/* actual main part of the application */}
           <Nav />
-          { children }
+          {children}
         </main>
+      </Provider>
+    </body>
+  </html>
+);
 
-        </Provider>
-
-      </body>
-    </html>
-  );
-}
-
-export default Rootlayout;
+export default RootLayout;
