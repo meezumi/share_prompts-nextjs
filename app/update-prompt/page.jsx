@@ -5,8 +5,16 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 const UpdatePrompt = () => {
   const router = useRouter();
+
+  if (!router.isFallback && !post) {
+    return <ErrorPage statusCode={404} />;
+  }
+
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
