@@ -7,7 +7,7 @@ import Provider from "@components/Provider";
 // layout is how the various components of the application all have the same layout, like navigation bar, footer etc., so we import them here.
 
 export const metadata = {
-  title: "Promptopia",
+  title: "Promptmon",
   description: "Discover & Share AI Prompts",
 };
 
