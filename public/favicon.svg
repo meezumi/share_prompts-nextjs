@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Orange background circle -->
+  <circle cx="100" cy="100" r="100" fill="#FF5722"/>
+  
+  <!-- White grid lines for globe effect -->
+  <!-- Horizontal lines -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="white" stroke-width="8"/>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="white" stroke-width="8"/>
+  <circle cx="100" cy="100" r="40" fill="none" stroke="white" stroke-width="8"/>
+  
+  <!-- Vertical line -->
+  <line x1="100" y1="20" x2="100" y2="180" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Diagonal lines -->
+  <line x1="30" y1="30" x2="170" y2="170" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <line x1="170" y1="30" x2="30" y2="170" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Connection dots -->
+  <circle cx="100" cy="100" r="6" fill="white"/>
+  <circle cx="100" cy="30" r="6" fill="white"/>
+  <circle cx="100" cy="170" r="6" fill="white"/>
+  <circle cx="30" cy="100" r="6" fill="white"/>
+  <circle cx="170" cy="100" r="6" fill="white"/>
+  <circle cx="60" cy="60" r="6" fill="white"/>
+  <circle cx="140" cy="60" r="6" fill="white"/>
+  <circle cx="60" cy="140" r="6" fill="white"/>
+  <circle cx="140" cy="140" r="6" fill="white"/>
+</svg>
