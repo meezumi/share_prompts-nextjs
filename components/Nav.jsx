@@ -32,13 +32,13 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="flex-between w-full mb-16 pt-3">
-      <Link href="/" className="flex gap-2 flex-center">
+    <nav className="flex-between w-full mb-16 pt-3 animate-slideInDown">
+      <Link href="/" className="flex gap-2 flex-center hover:scale-110 transition-transform hover:opacity-80">
         <Image
-          src="/assets/images/logo.svg"
-          alt="logo"
-          width={30}
-          height={30}
+          src="/favicon.svg"
+          alt="Promptmon logo"
+          width={28}
+          height={28}
           className="object-contain"
         />
         <p className="logo_text">Promptmon</p>
@@ -48,16 +48,16 @@ const Nav = () => {
       {/* currently its undefined, cause we really dont have any user. */}
 
       {/* Desktop Navigation */}
-      <div className="sm:flex hidden">
+      <div className="sm:flex hidden animate-slideInUp">
         {/* this means that if small device, its visible, else hidden */}
 
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
-            <Link href="/create-prompt" className="black_btn">
+            <Link href="/create-prompt" className="black_btn hover:scale-105 transition-transform">
               Create Post
             </Link>
 
-            <button type="button" onClick={signOut} className="outline_btn">
+            <button type="button" onClick={signOut} className="outline_btn hover:scale-105 transition-transform">
               Sign Out
             </button>
 
@@ -67,7 +67,7 @@ const Nav = () => {
                 // for this to work, will have to add 'lh3.googleusercontent.com' in next.config.js
                 width={37}
                 height={37}
-                className="rounded-full"
+                className="rounded-full hover:scale-110 transition-transform"
                 alt="profile"
               />
             </Link>

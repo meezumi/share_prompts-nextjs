@@ -27,10 +27,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   return (
-    <div className='prompt_card'>
+    <div className='prompt_card hover:shadow-lg transition-all hover:scale-105 duration-300'>
       <div className='flex justify-between items-start gap-5'>
         <div
-          className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
+          className='flex-1 flex justify-start items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity'
           onClick={handleProfileClick}
         >
           <Image
@@ -38,7 +38,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             alt='user_image'
             width={40}
             height={40}
-            className='rounded-full object-contain'
+            className='rounded-full object-contain hover:scale-110 transition-transform'
           />
 
           <div className='flex flex-col'>
@@ -51,7 +51,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           </div>
         </div>
 
-        <div className='copy_btn' onClick={handleCopy}>
+        <div className='copy_btn hover:scale-110 transition-transform' onClick={handleCopy}>
           <Image
             src={
               copied === post.prompt
@@ -67,22 +67,22 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
       <p className='my-4 text-sm text-gray-700'>{post.prompt}</p>
       <p
-        className='text-sm blue_gradient cursor-pointer'
+        className='text-sm blue_gradient cursor-pointer hover:scale-110 transition-transform inline-block'
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
-        #{post.tag}
+        {post.tag}
       </p>
 
       {session?.user.id === post.creator._id && pathName === "/profile" && (
-        <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
+        <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3 animate-slideInUp'>
           <p
-            className='text-sm green_gradient cursor-pointer'
+            className='text-sm green_gradient cursor-pointer hover:scale-110 transition-transform'
             onClick={handleEdit}
           >
             Edit
           </p>
           <p
-            className='text-sm orange_gradient cursor-pointer'
+            className='text-sm orange_gradient cursor-pointer hover:scale-110 transition-transform'
             onClick={handleDelete}
           >
             Delete

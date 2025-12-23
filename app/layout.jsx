@@ -9,6 +9,9 @@ import Provider from "@components/Provider";
 export const metadata = {
   title: "Promptmon",
   description: "Discover & Share AI Prompts",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 const RootLayout = ({ children }) => (
@@ -24,7 +27,9 @@ const RootLayout = ({ children }) => (
         <main className="app">
           {/* actual main part of the application */}
           <Nav />
-          {children}
+          <div className="animate-fadeIn">
+            {children}
+          </div>
         </main>
       </Provider>
     </body>

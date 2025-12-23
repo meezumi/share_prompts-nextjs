@@ -6,13 +6,12 @@ import Feed from "@components/Feed";
 const Home = () => (
   <section className="w-full flex-center flex-col">
     <h1 className="head_text text-center">
-      Discover & Share
+      Harness the Power of
       <br className="max-md:hidden" />
-      <span className="orange_gradient text-center"> AI-Powered Prompts</span>
+      <span className="animate-gradient-flow text-center">Promptmon</span>
     </h1>
     <p className="desc text-center">
-      Promptmon is an open-source AI prompting tool for modern world to
-      discover, create and share creative prompts :)
+      Build & share exceptional AI prompts. Collaborate with creators worldwide and unlock the full potential of AI.
     </p>
 
     {/* Feed Components */}
